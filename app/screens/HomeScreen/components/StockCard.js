@@ -3,14 +3,16 @@ import React from 'react'
 
 const StockCard = ({item}) => {
     console.log(item);
-  return (
-    <View style={styles.cardContainer}>
-      <View style={styles.textContainer}>
-        <Text style={styles.tickerSymbol}> {item.symbol} </Text>
-        <Text style={styles.tickerPrice}> {item.price} </Text>
-      </View>
-    </View>
-  )
+  if(item.symbol !== undefined) {
+    return (
+        <View style={styles.cardContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.tickerSymbol}> {item.symbol} </Text>
+            <Text style={styles.tickerPrice}> {item.price} </Text>
+          </View>
+        </View>
+      )
+  }
 }
 
 export default StockCard
